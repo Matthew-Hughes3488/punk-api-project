@@ -20,7 +20,6 @@ function App() {
   return (
     <>
       <section className="website-body">
-        {" "}
         {/* class name is a placeholder, update it */}
         <NavBar />
         <Main beers={beers} />
