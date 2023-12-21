@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Main } from './containers/Main/Main'
+import { Main } from './components/Main/Main'
 import beers from './data/beers'
 import "./App.scss"
 
