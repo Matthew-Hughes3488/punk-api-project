@@ -12,8 +12,8 @@ function App() {
     const value : string = event.currentTarget.value;
     if(!value) setSearchValue("");
     else {
-      value.replace("", "_");
-      setSearchValue(`&beer_name=${searchValue}`)
+      value.replace(" ", "_");
+      setSearchValue(`&beer_name=${value}`)
     }
   }
 
@@ -31,7 +31,7 @@ function App() {
     <>
       <section className="website-body">
         {/* class name is a placeholder, update it */}
-        <NavBar />
+        <NavBar onSearchBoxChange={handleSearchBoxInput}/>
         <Main beers={beers} />
       </section>
     </>
