@@ -1,5 +1,18 @@
+@use "./Variables.scss" as *;
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+.website-body{
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (min-width: $tablet-width){
+    .website-body{
+       flex-direction: row;
+    }
+   }
