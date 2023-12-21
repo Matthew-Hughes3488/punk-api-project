@@ -8,8 +8,8 @@ type mainProps = {
 
 export const Main = ({beers} : mainProps) => {
   return (
-    <main className="main-card-container">
+    <>
       <CardList beers={beers}/>
-    </main>
+    </>
   )
 }
