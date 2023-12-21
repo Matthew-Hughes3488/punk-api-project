@@ -1,4 +1,3 @@
-import React from 'react'
 import { FilterItem } from '../FilterItem/FilterItem'
 
 export const FilterList = () => {

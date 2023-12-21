@@ -1,5 +1,3 @@
-import React from "react";
-
 type filterItempProps = {
   label: string;
   //Add function here later

@@ -6,6 +6,7 @@ type cardProps = {
 }
 
 export const Card = ({beer}: cardProps) => {
+  //Add id to section later. Id is in the beer object 
   return (
     <section className="beer-cards__card">
         <img className="beer-cards__card--image" src={beer.image_url} alt="" />
