@@ -6,7 +6,7 @@ type mainProps = {
     beers: Beer[]
 }
 
-export const main = ({beers} : mainProps) => {
+export const Main = ({beers} : mainProps) => {
   return (
     <main>
       <CardList beers={beers}/>
