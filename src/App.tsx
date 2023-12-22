@@ -32,17 +32,26 @@ function App() {
     }
   };
 
+  const filterPh = (beers: Beer[]) : Beer[] => {
+    return beers.filter(beer =>{
+      return beer.ph < 4
+    })
+  }
+
   const getBeerData = async () => {
     const data = await fetch(
       `https://api.punkapi.com/v2/beers?per_page=6${searchValue}${searchHighABV}${searchClassicRange}`
     );
-    const beersData: Beer[] = await data.json();
+    let beersData: Beer[] = await data.json();
+
+    if(searchAdicity) beersData = filterPh(beersData);
+
     setBeers(beersData);
   };
 
   useEffect(() => {
     getBeerData();
-  }, [searchValue, searchHighABV, searchClassicRange]);
+  }, [searchValue, searchHighABV, searchClassicRange, searchAdicity]);
 
   return (
     <>
