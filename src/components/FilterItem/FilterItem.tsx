@@ -1,13 +1,15 @@
+import { ChangeEventHandler } from "react";
+
 type filterItempProps = {
   label: string;
-  //Add function here later
+  onChange: ChangeEventHandler<HTMLInputElement>;
 };
 
-export const FilterItem = ({ label }: filterItempProps) => {
+export const FilterItem = ({ label, onChange}: filterItempProps) => {
   return (
     <>
       <label htmlFor="checkbox">{label}</label>
-      <input type="checkbox" id="checkbox"></input>
+      <input type="checkbox" id="checkbox" onChange={onChange}></input>
     </>
   );
 };

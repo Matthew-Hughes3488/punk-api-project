@@ -14,10 +14,10 @@ function App() {
   const handleHighABVChange = () =>{
     setSearchHighABV(!searchHighABV);
   }
-  const handleSearchClassicRangeChange = () =>{
+  const handleClassicRangeChange = () =>{
     setSearchClassicRange(!searchClassicRange)
   }
-  const handleSearchAcidityChange = () =>{
+  const handleAcidityChange = () =>{
     setSearchAcitdity(!searchAdicity)
   }
 
@@ -44,7 +44,7 @@ function App() {
     <>
       <section className="website-body">
         {/* class name is a placeholder, update it */}
-        <NavBar onSearchBoxChange={handleSearchBoxInput}/>
+        <NavBar onSearchBoxChange={handleSearchBoxInput} onABVChange={handleHighABVChange} onAcidityChange={handleAcidityChange} onClassicRangeChange={handleClassicRangeChange}/>
         <Main beers={beers} />
       </section>
     </>
