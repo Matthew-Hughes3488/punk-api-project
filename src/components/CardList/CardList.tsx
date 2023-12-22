@@ -1,4 +1,3 @@
-import React from 'react'
 import { Beer } from '../../types/types'
 import { Card } from '../Card/Card'
 import "./CardList.scss"
@@ -11,7 +10,7 @@ export const CardList = ({beers}: cardListProps) => {
   return (
     <section className='beer-cards'>
         {beers.map((beer) =>{
-            return <Card beer={beer}/>
+            return <Card key={beer.id} beer={beer}/>
         })}
     </section>
   )
