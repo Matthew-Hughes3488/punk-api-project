@@ -1,4 +1,3 @@
-import React from 'react'
 import { Beer } from '../../types/types'
 import { Card } from '../Card/Card'
 import "./CardList.scss"

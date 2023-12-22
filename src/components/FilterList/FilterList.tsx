@@ -11,8 +11,8 @@ export const FilterList = ({onABVChange, onAcidityChange, onClassicRangeChange} 
   return (
     <section>
         <FilterItem onChange={onABVChange} label='High ABV (>6.0%)'/>
-        <FilterItem onChange={onAcidityChange} label='Classic Range'/>
-        <FilterItem onChange={onClassicRangeChange} label='Acidic (pH < 4)'/>
+        <FilterItem onChange={onClassicRangeChange} label='Classic Range'/>
+        <FilterItem onChange={onAcidityChange} label='Acidic (pH < 4)'/>
     </section>
   )
 }
