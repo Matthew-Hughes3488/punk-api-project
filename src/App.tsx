@@ -7,6 +7,19 @@ import { NavBar } from "./components/NavBar/NavBar";
 function App() {
   const [beers, setBeers] = useState<Beer[]>([]);
   const [searchValue, setSearchValue] = useState<string>("")
+  const [searchHighABV, setSearchHighABV] = useState<boolean>(false);
+  const [searchClassicRange, setSearchClassicRange] = useState<boolean>(false);
+  const [searchAdicity, setSearchAcitdity] = useState<boolean>(false);
+
+  const handleHighABVChange = () =>{
+    setSearchHighABV(!searchHighABV);
+  }
+  const handleSearchClassicRangeChange = () =>{
+    setSearchClassicRange(!searchClassicRange)
+  }
+  const handleSearchAcidityChange = () =>{
+    setSearchAcitdity(!searchAdicity)
+  }
 
   const handleSearchBoxInput = (event: ChangeEvent<HTMLInputElement>) =>{
     const value : string = event.currentTarget.value;
