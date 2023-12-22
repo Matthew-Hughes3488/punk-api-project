@@ -11,7 +11,7 @@ export const CardList = ({beers}: cardListProps) => {
   return (
     <section className='beer-cards'>
         {beers.map((beer) =>{
-            return <Card beer={beer}/>
+            return <Card key={beer.id} beer={beer}/>
         })}
     </section>
   )

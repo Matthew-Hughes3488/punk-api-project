@@ -12,7 +12,7 @@ function App() {
   const [searchAdicity, setSearchAcitdity] = useState<boolean>(false);
 
   const handleHighABVChange = () =>{
-    setSearchHighABV(!searchHighABV);
+    setSearchHighABV(!searchHighABV);       
   }
   const handleClassicRangeChange = () =>{
     setSearchClassicRange(!searchClassicRange)
@@ -20,7 +20,7 @@ function App() {
   const handleAcidityChange = () =>{
     setSearchAcitdity(!searchAdicity)
   }
-
+  
   const handleSearchBoxInput = (event: ChangeEvent<HTMLInputElement>) =>{
     const value : string = event.currentTarget.value;
     if(!value) setSearchValue("");
