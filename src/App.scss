@@ -11,7 +11,7 @@
     flex-direction: column;
 }
 
-@media screen and (min-width: $tablet-width){
+@media screen and (min-width: $desktop-width){
     .website-body{
        flex-direction: row;
     }
