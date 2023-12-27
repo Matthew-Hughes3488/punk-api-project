@@ -8,10 +8,10 @@ type cardProps = {
 export const Card = ({beer}: cardProps) => {
   //Add id to section later. Id is in the beer object 
   return (
-    <section className="beer-cards__card">
-        <img className="beer-cards__card--image" src={beer.image_url} alt="" />
-        <h1 className="beer-cards__card--title">{`${beer.name} - ${beer.tagline}`}</h1>
-        <p className="beer-cards__card--description">{beer.description}</p>
+    <section className="beer-card">
+        <img className="beer-card__image" src={beer.image_url} alt="" />
+        <h1 className="beer-card__title">{`${beer.name} - ${beer.tagline}`}</h1>
+        <p className="beer-card__description">{beer.description}</p>
     </section>
   )
 }
