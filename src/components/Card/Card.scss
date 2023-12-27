@@ -1,5 +1,7 @@
+@use './../../Variables.scss' as *;
+
 .beer-cards__card{
-    border: 1px solid black;
+    border: 1px solid $color-light-blue;
     border-radius: 8px;
     overflow: hidden;
     width: 300px;

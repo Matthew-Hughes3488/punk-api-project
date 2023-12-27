@@ -1,3 +1,5 @@
+@use './../../Variables.scss' as *;
+
 .nav-bar{
-    border: 2px solid black;
+    background-color: $color-light-grey;
 }

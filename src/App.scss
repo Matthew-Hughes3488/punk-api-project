@@ -4,11 +4,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: $color-blue;
 }
 
 .website-body{
     display: flex;
     flex-direction: column;
+    background-color: $color-dark-grey;
 }
 
 @media screen and (min-width: $desktop-width){
