@@ -12,10 +12,3 @@
     grid-template-columns: repeat(2, 310px);
  }
 }
-
-@media screen and (min-width: $desktop-width){
-    .beer-cards{
-       display: grid;
-       grid-template-columns: repeat(3, 310px);
-    }
-   }
