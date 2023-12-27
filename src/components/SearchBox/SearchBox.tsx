@@ -1,4 +1,5 @@
 import {ChangeEventHandler} from 'react'
+import "./SearchBox.scss"
 
 type searchBoxProps = {
   onSearchBoxChange: ChangeEventHandler<HTMLInputElement>;
@@ -7,7 +8,7 @@ type searchBoxProps = {
 export const SearchBox = ({onSearchBoxChange}: searchBoxProps) => {
   return (
     <div>
-        <input type="text" placeholder='Search...' onChange={onSearchBoxChange}/>
+        <input className='search-box' type="text" placeholder='Search...' onChange={onSearchBoxChange}/>
     </div>
   )
 }

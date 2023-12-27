@@ -1,4 +1,5 @@
 import { ChangeEventHandler } from "react";
+import "./FilterItem.scss"
 
 type filterItempProps = {
   label: string;
@@ -7,9 +8,9 @@ type filterItempProps = {
 
 export const FilterItem = ({ label, onChange}: filterItempProps) => {
   return (
-    <>
-      <label htmlFor="checkbox">{label}</label>
-      <input type="checkbox" id="checkbox" onChange={onChange}></input>
-    </>
+    <section className="filter-item">
+      <label className="filter-item__label" htmlFor="checkbox">{label}</label>
+      <input className="filter-item-checkbox" type="checkbox" id="checkbox" onChange={onChange}></input>
+    </section>
   );
 };

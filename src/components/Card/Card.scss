@@ -1,5 +1,7 @@
-.beer-cards__card{
-    border: 1px solid black;
+@use './../../Variables.scss' as *;
+
+.beer-card{
+    border: 1px solid $color-light-blue;
     border-radius: 8px;
     overflow: hidden;
     width: 300px;
@@ -8,13 +10,22 @@
     flex-direction: column;
     margin: 10px;
 
-    &--image{
+    &__image{
         width: 30%;
         height: 60%;
+        margin: 10px;
+        align-self: center;
+    }
+
+    &__title{
         margin-bottom: 10px;
     }
 
-    &--title{
-        margin-bottom: 10px;
+    &__description{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 8;
+        -webkit-box-orient: vertical;
     }
 }
