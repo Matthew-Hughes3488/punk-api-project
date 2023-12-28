@@ -1,31 +1,31 @@
-@use './../../Variables.scss' as *;
+@use "./../../Variables.scss" as *;
 
-.beer-card{
-    border: 1px solid $color-light-blue;
-    border-radius: 8px;
-    overflow: hidden;
-    width: 300px;
-    height: 500px;
-    display: flex;
-    flex-direction: column;
+.beer-card {
+  border: 1px solid $color-light-blue;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 300px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+
+  &__image {
+    width: 30%;
+    height: 60%;
     margin: 10px;
+    align-self: center;
+  }
 
-    &__image{
-        width: 30%;
-        height: 60%;
-        margin: 10px;
-        align-self: center;
-    }
+  &__title {
+    margin-bottom: 10px;
+  }
 
-    &__title{
-        margin-bottom: 10px;
-    }
-
-    &__description{
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-line-clamp: 8;
-        -webkit-box-orient: vertical;
-    }
+  &__description {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 8;
+    -webkit-box-orient: vertical;
+  }
 }

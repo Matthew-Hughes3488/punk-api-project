@@ -3,6 +3,8 @@ import { Main } from "./components/Main/Main";
 import { Beer } from "./types/types";
 import "./App.scss";
 import { NavBar } from "./components/NavBar/NavBar";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BeerInfo } from "./container/BeerInfo/BeerInfo";
 
 function App() {
   const [beers, setBeers] = useState<Beer[]>([]);
@@ -32,11 +34,11 @@ function App() {
     }
   };
 
-  const filterPh = (beers: Beer[]) : Beer[] => {
-    return beers.filter(beer =>{
-      return beer.ph < 4
-    })
-  }
+  const filterPh = (beers: Beer[]): Beer[] => {
+    return beers.filter((beer) => {
+      return beer.ph < 4;
+    });
+  };
 
   const getBeerData = async () => {
     const data = await fetch(
@@ -44,7 +46,7 @@ function App() {
     );
     let beersData: Beer[] = await data.json();
 
-    if(searchAdicity) beersData = filterPh(beersData);
+    if (searchAdicity) beersData = filterPh(beersData);
 
     setBeers(beersData);
   };
@@ -54,18 +56,28 @@ function App() {
   }, [searchValue, searchHighABV, searchClassicRange, searchAdicity]);
 
   return (
-    <>
-      <section className="website-body">
-        {/* class name is a placeholder, update it */}
-        <NavBar
-          onSearchBoxChange={handleSearchBoxInput}
-          onABVChange={handleHighABVChange}
-          onAcidityChange={handleAcidityChange}
-          onClassicRangeChange={handleClassicRangeChange}
+    <BrowserRouter>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <section className="website-body">
+              <NavBar
+                onSearchBoxChange={handleSearchBoxInput}
+                onABVChange={handleHighABVChange}
+                onAcidityChange={handleAcidityChange}
+                onClassicRangeChange={handleClassicRangeChange}
+              />
+              <Main beers={beers} />
+            </section>
+          }
         />
-        <Main beers={beers} />
-      </section>
-    </>
+        <Route
+          path="/beers/:id"
+          element={<BeerInfo beers={beers} />}
+        />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
