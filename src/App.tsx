@@ -1,10 +1,10 @@
 import { useEffect, useState, ChangeEvent } from "react";
 import { Main } from "./components/Main/Main";
 import { Beer } from "./types/types";
-import "./App.scss";
 import { NavBar } from "./components/NavBar/NavBar";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { BeerInfo } from "./container/BeerInfo/BeerInfo";
+import "./App.scss";
 
 function App() {
   const [beers, setBeers] = useState<Beer[]>([]);
