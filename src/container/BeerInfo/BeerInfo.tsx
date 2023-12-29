@@ -1,3 +1,4 @@
+import { BeerIngredientList } from "../../components/BeerIngredientList/BeerIngredientList";
 import { Beer } from "../../types/types";
 import { Link, useParams } from "react-router-dom";
 
@@ -11,32 +12,6 @@ export const BeerInfo = ({ beers }: BeerInfoProps) => {
 
   const beer = beers.find((beer) => beer.id == beerId);
   if (!beer) return <p>Couldn't find the beers page</p>;
-
-  const ingredientsHTML = (
-    <section>
-      <h2>Ingredients</h2>
-      <h3>Malts</h3>
-      <ul>
-        {beer.ingredients.malt.map((maltIngredient) => {
-          return (
-            <li>{`${maltIngredient.name} - ${maltIngredient.amount.value} ${maltIngredient.amount.unit}`}</li>
-          );
-        })}
-      </ul>
-      <h3>Hops</h3>
-      <ul>
-        {beer.ingredients.hops.map((hop) => {
-          return (
-            <li>{`${hop.name} - ${hop.amount.value} ${hop.amount.unit}`}</li>
-          );
-        })}
-      </ul>
-      <h3>Yeast</h3>
-      <ul>
-        <li>{beer.ingredients.yeast}</li>
-      </ul>
-    </section>
-  );
 
   const foodPairingsHMTL = (
     <section>
@@ -59,7 +34,7 @@ export const BeerInfo = ({ beers }: BeerInfoProps) => {
         <h2>Description</h2>
         <p>{beer.description}</p>
       </section>
-      {ingredientsHTML}
+      <BeerIngredientList beer={beer}/>
       {foodPairingsHMTL}
     </section>
   );
