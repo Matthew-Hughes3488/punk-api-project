@@ -1,4 +1,5 @@
 import { BeerIngredientList } from "../../components/BeerIngredientList/BeerIngredientList";
+import { FoodPairingList } from "../../components/FoodPairingList/FoodPairingList";
 import { Beer } from "../../types/types";
 import { Link, useParams } from "react-router-dom";
 
@@ -13,17 +14,6 @@ export const BeerInfo = ({ beers }: BeerInfoProps) => {
   const beer = beers.find((beer) => beer.id == beerId);
   if (!beer) return <p>Couldn't find the beers page</p>;
 
-  const foodPairingsHMTL = (
-    <section>
-      <h2>Food Pairings</h2>
-      <ul>
-        {beer.food_pairing.map((food) => {
-          return <li>{food}</li>;
-        })}
-      </ul>
-    </section>
-  );
-
   return (
     <section className="beer-info-page">
       <Link to="/">
@@ -35,7 +25,7 @@ export const BeerInfo = ({ beers }: BeerInfoProps) => {
         <p>{beer.description}</p>
       </section>
       <BeerIngredientList beer={beer}/>
-      {foodPairingsHMTL}
+      <FoodPairingList beer={beer}/>
     </section>
   );
 };
