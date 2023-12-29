@@ -17,12 +17,12 @@ export const BeerInfo = ({ beers }: BeerInfoProps) => {
   return (
     <section className="beer-info-page">
       <Link to="/">
-        <h1>Return</h1>
+        <h1 className="beer-info__return-link">Return</h1>
       </Link>
       <h1 className="beer-info-page__name">{`${beer.name} - ${beer.tagline}`}</h1>
       <section>
-        <h2>Description</h2>
-        <p>{beer.description}</p>
+        <h2 className="beer-info-page__description-title">Description</h2>
+        <p className="beer-info-page__description-text">{beer.description}</p>
       </section>
       <BeerIngredientList beer={beer}/>
       <FoodPairingList beer={beer}/>
