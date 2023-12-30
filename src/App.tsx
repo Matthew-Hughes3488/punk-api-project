@@ -9,6 +9,7 @@ import "./App.scss";
 function App() {
   const [beers, setBeers] = useState<Beer[]>([]);
   const [searchValue, setSearchValue] = useState<string>("");
+  const [numOfResults, setNumOfResults] = useState<string>("6");
   const [searchHighABV, setSearchHighABV] = useState<string>("");
   const [searchClassicRange, setSearchClassicRange] = useState<string>("");
   const [searchAdicity, setSearchAcitdity] = useState<boolean>(false);
@@ -34,6 +35,14 @@ function App() {
     }
   };
 
+  const handleNumOfResultsChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const value: string = event.currentTarget.value;
+    if (!value) setNumOfResults("6");
+    else {
+      setNumOfResults(value);
+    }
+  };
+
   const filterPh = (beers: Beer[]): Beer[] => {
     return beers.filter((beer) => {
       return beer.ph < 4;
@@ -42,7 +51,7 @@ function App() {
 
   const getBeerData = async () => {
     const data = await fetch(
-      `https://api.punkapi.com/v2/beers?per_page=80${searchValue}${searchHighABV}${searchClassicRange}`
+      `https://api.punkapi.com/v2/beers?per_page=${numOfResults}${searchValue}${searchHighABV}${searchClassicRange}`
     );
     let beersData: Beer[] = await data.json();
 
@@ -53,7 +62,7 @@ function App() {
 
   useEffect(() => {
     getBeerData();
-  }, [searchValue, searchHighABV, searchClassicRange, searchAdicity]);
+  }, [searchValue, searchHighABV, searchClassicRange, searchAdicity, numOfResults]);
 
   return (
     <BrowserRouter>
@@ -64,6 +73,7 @@ function App() {
             <section className="website-body">
               <NavBar
                 onSearchBoxChange={handleSearchBoxInput}
+                onNumOfResultsChange={handleNumOfResultsChange}
                 onABVChange={handleHighABVChange}
                 onAcidityChange={handleAcidityChange}
                 onClassicRangeChange={handleClassicRangeChange}

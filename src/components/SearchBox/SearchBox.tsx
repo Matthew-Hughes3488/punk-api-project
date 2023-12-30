@@ -3,12 +3,14 @@ import "./SearchBox.scss"
 
 type searchBoxProps = {
   onSearchBoxChange: ChangeEventHandler<HTMLInputElement>;
+  type: string
+  defaultText: string;
 }
 
-export const SearchBox = ({onSearchBoxChange}: searchBoxProps) => {
+export const SearchBox = ({onSearchBoxChange, type, defaultText}: searchBoxProps) => {
   return (
     <div>
-        <input className='search-box' type="text" placeholder='Search...' onChange={onSearchBoxChange}/>
+        <input className='search-box' type={type} placeholder={defaultText} onChange={onSearchBoxChange}/>
     </div>
   )
 }
