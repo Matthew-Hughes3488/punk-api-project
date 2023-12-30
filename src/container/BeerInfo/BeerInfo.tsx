@@ -2,6 +2,8 @@ import { BeerIngredientList } from "../../components/BeerIngredientList/BeerIngr
 import { FoodPairingList } from "../../components/FoodPairingList/FoodPairingList";
 import { Beer } from "../../types/types";
 import { Link, useParams } from "react-router-dom";
+import "./BeerInfo.scss"
+import { BeerDescription } from "../../components/BeerDescription/BeerDescription";
 
 type BeerInfoProps = {
   beers: Beer[];
@@ -20,10 +22,7 @@ export const BeerInfo = ({ beers }: BeerInfoProps) => {
         <h1 className="beer-info__return-link">Return</h1>
       </Link>
       <h1 className="beer-info-page__name">{`${beer.name} - ${beer.tagline}`}</h1>
-      <section>
-        <h2 className="beer-info-page__description-title">Description</h2>
-        <p className="beer-info-page__description-text">{beer.description}</p>
-      </section>
+      <BeerDescription beer={beer}/>
       <BeerIngredientList beer={beer}/>
       <FoodPairingList beer={beer}/>
     </section>
