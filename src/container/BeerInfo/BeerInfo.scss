@@ -1,38 +1,50 @@
 @use "./../../Variables.scss" as *;
 
-*{
-    background-color: $color-dark-grey;
-}
 
 .beer-info-page{
+    background-color: $color-dark-grey;
     display: flex;
     flex-direction: column-reverse;
-
+    
     a{
         text-decoration: none;
         font-size: 0.6rem;
         margin: 10px;
     }
-
+    
     &__name{
         margin: 10px;
         font-size: 2rem;
     }
-
+    
     &__image-container{
+        display: flex;
+        justify-content: center;
         &--image{
             height: 50%;
+            width: 50%;
         }
     }
 }
 
 
 @media screen and (min-width: $tablet-width) {
-    .beer-info-page{
+    .beer-info-container{
+        background-color: $color-dark-grey;
         height: 100vh;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .beer-info-page{
+        height: 650px;
+        border: 2px solid $color-light-grey;
+        border-radius: 5px;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 40px 1fr;
+        grid-template-rows: 40px 600px;
+        margin: 10px;
     
         a{
             grid-column: span 2;
@@ -43,7 +55,12 @@
         }
     
         &__image-container{
-            justify-self: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &--image{
+                height: 90%;
+            }
         }
     
     } 

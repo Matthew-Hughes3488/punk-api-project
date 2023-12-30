@@ -17,22 +17,24 @@ export const BeerInfo = ({ beers }: BeerInfoProps) => {
   if (!beer) return <p>Couldn't find the beers page</p>;
 
   return (
-    <section className="beer-info-page">
-      <Link to="/">
-        <h1 className="beer-info__return-link">Return</h1>
-      </Link>
-      <section>
-        <h1 className="beer-info-page__name">{`${beer.name} - ${beer.tagline}`}</h1>
-        <BeerDescription beer={beer} />
-        <BeerIngredientList beer={beer} />
-        <FoodPairingList beer={beer} />
-      </section>
-      <section className="beer-info-page__image-container">
-        <img
-          className="beer-info-page__image-container--image"
-          src={beer.image_url}
-          alt="image of the beer"
-        />
+    <section className="beer-info-container">
+      <section className="beer-info-page">
+        <Link to="/">
+          <h1 className="beer-info__return-link">Return</h1>
+        </Link>
+        <section>
+          <h1 className="beer-info-page__name">{`${beer.name} - ${beer.tagline}`}</h1>
+          <BeerDescription beer={beer} />
+          <BeerIngredientList beer={beer} />
+          <FoodPairingList beer={beer} />
+        </section>
+        <section className="beer-info-page__image-container">
+          <img
+            className="beer-info-page__image-container--image"
+            src={beer.image_url}
+            alt="image of the beer"
+          />
+        </section>
       </section>
     </section>
   );
