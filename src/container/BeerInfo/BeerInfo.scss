@@ -1,7 +1,7 @@
 @use "./../../Variables.scss" as *;
 
 
-.beer-info-page{
+.beer-info-card{
     background-color: $color-dark-grey;
     display: flex;
     flex-direction: column-reverse;
@@ -14,7 +14,7 @@
     
     &__name{
         margin: 10px;
-        font-size: 2rem;
+        font-size: rem;
     }
     
     &__image-container{
@@ -37,7 +37,7 @@
         align-items: center;
         justify-content: center;
     }
-    .beer-info-page{
+    .beer-info-card{
         height: 650px;
         border: 2px solid $color-light-grey;
         border-radius: 5px;
@@ -60,6 +60,7 @@
             align-items: center;
             &--image{
                 height: 90%;
+                width: auto;
             }
         }
     
