@@ -1,12 +1,32 @@
 @use "./../../Variables.scss" as *;
+
 *{
+    background-color: $color-dark-grey;
 }
 
 .beer-info-page{
     height: 100vh;
-    background-color: $color-dark-grey;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 40px 1fr;
+
     a{
         text-decoration: none;
         font-size: 0.6rem;
+        margin: 10px;
+        grid-column: span 2;
     }
+
+    &__name{
+        margin: 10px;
+        font-size: 2rem;
+    }
+
+    &__image-container{
+        justify-self: center;
+        &--image{
+            height: 50%;
+        }
+    }
+
 }
