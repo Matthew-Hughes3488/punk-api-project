@@ -1,5 +1,8 @@
+@use "./../../Variables.scss" as *;
+
 .main-card-container{
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: $color-dark-grey;
 }
