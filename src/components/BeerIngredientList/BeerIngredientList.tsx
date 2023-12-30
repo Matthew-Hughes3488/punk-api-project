@@ -1,4 +1,5 @@
 import { Beer } from "../../types/types"
+import "./BeerIngredientList.scss"
 
 type BeerIngredientListProps = {
     beer: Beer
@@ -6,27 +7,29 @@ type BeerIngredientListProps = {
 
 export const BeerIngredientList = ({beer} : BeerIngredientListProps) => {
   return (
-    <section className='beer-ingredients'>
-      <h2 className='beer-ingredients__title'>Ingredients</h2>
-      <h3 className='beer-ingredients__malt-title'>Malts</h3>
-      <ul className='beer-ingredients__malt-list'>
+    <section className='ingredients-container'>
+      <h2 className='ingredients-container__title'>Ingredients</h2>
+      <section className="ingredient-container"></section>
+      <h3 className='ingredient-container__title'>Malts</h3>
+      <ul className='ingredient-container__list'>
         {beer.ingredients.malt.map((maltIngredient) => {
           return (
-            <li className='beer-ingredients__malt-list--item'>{`${maltIngredient.name} - ${maltIngredient.amount.value} ${maltIngredient.amount.unit}`}</li>
+            <li className='ingredient-container__malt-list--item'>{`${maltIngredient.name} - ${maltIngredient.amount.value} ${maltIngredient.amount.unit}`}</li>
           );
         })}
       </ul>
-      <h3 className='beer-ingredients__hop-title'>Hops</h3>
-      <ul className='beer-ingredients__hop-list'>
+      <section className="ingredient-container"></section>
+      <h3 className='ingredient-container__title'>Hops</h3>
+      <ul className='ingredient-container__list'>
         {beer.ingredients.hops.map((hop) => {
           return (
-            <li className='beer-ingredients__hop-list--item'>{`${hop.name} - ${hop.amount.value} ${hop.amount.unit}`}</li>
+            <li className='ingredient-container__list--item'>{`${hop.name} - ${hop.amount.value} ${hop.amount.unit}`}</li>
           );
         })}
       </ul>
-      <h3 className='beer-ingredients__yeast-title'>Yeast</h3>
+      <h3 className='ingredient-container__title'>Yeast</h3>
       <ul>
-        <li className='beer-ingredients__yeast-name'>{beer.ingredients.yeast}</li>
+        <li className='ingredient-container__list'>{beer.ingredients.yeast}</li>
       </ul>
     </section>
   );
