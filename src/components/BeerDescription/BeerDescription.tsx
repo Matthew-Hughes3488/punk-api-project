@@ -8,9 +8,9 @@ type BeerDescriptionProps = {
 
 export const BeerDescription = ({beer}: BeerDescriptionProps) => {
   return (
-    <section>
-    <h2 className="beer-info-page__description-title">Description</h2>
-    <p className="beer-info-page__description-text">{beer.description}</p>
+    <section className='description-container'>
+    <h2 className="description-container__title">Description</h2>
+    <p className="description-container__text">{beer.description}</p>
   </section>
   )
 }

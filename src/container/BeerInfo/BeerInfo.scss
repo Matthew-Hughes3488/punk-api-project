@@ -5,10 +5,8 @@
 }
 
 .beer-info-page{
-    height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 40px 1fr;
+    display: flex;
+    flex-direction: column-reverse;
 
     a{
         text-decoration: none;
@@ -19,14 +17,35 @@
 
     &__name{
         margin: 10px;
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 
     &__image-container{
-        justify-self: center;
         &--image{
             height: 50%;
         }
     }
+}
 
+
+@media screen and (min-width: $tablet-width) {
+    .beer-info-page{
+        height: 100vh;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 40px 1fr;
+    
+        a{
+            grid-column: span 2;
+        }
+    
+        &__name{
+            font-size: 2rem;
+        }
+    
+        &__image-container{
+            justify-self: center;
+        }
+    
+    } 
 }
