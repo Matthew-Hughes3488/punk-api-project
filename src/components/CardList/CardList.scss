@@ -7,7 +7,7 @@
   align-items: center;
   justify-content: center;
 
-  a{
+  a {
     text-decoration: none;
   }
 }
@@ -16,6 +16,13 @@
   .beer-cards {
     display: grid;
     grid-template-columns: repeat(2, 310px);
+    grid-gap: 30px;
+  }
+}
+
+@media screen and (min-width: $large-desktop-width) {
+  .beer-cards {
+    grid-template-columns: repeat(3, 310px);
     grid-gap: 30px;
   }
 }
