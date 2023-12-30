@@ -1,0 +1,12 @@
+@use "./../../Variables.scss" as *;
+
+@media screen and (min-width: $tablet-width) {
+    .beer-info-container{
+        background-color: $color-dark-grey;
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    } 
+}

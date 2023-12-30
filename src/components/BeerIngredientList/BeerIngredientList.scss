@@ -1,0 +1,17 @@
+.ingredients-container{
+    margin: 10px;
+    &__title{
+        font-size: 1.5rem;
+    }
+}
+
+.ingredient-container{
+    margin: 10px;
+    &__title{
+        margin: 5px;
+    }
+    &__list{
+        margin: 5px 10px;
+        list-style-type: none;
+    }
+}
