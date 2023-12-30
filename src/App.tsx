@@ -37,7 +37,7 @@ function App() {
 
   const handleNumOfResultsChange = (event: ChangeEvent<HTMLInputElement>) => {
     const value: string = event.currentTarget.value;
-    if (!value) setNumOfResults("6");
+    if (!value || parseInt(value) < 1) setNumOfResults("6");
     else {
       setNumOfResults(value);
     }
