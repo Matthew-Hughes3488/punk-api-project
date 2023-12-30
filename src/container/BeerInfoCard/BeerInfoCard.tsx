@@ -20,7 +20,7 @@ export const BeerInfoCard = ({ beer }: BeerInfoCard) => {
         container.style.height = container.scrollHeight + 10 + "px";
       }
     }
-  }, [beer]);
+  }, []);
   
   return (
     <section ref={containerRef} className="beer-info-card">

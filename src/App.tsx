@@ -42,7 +42,7 @@ function App() {
 
   const getBeerData = async () => {
     const data = await fetch(
-      `https://api.punkapi.com/v2/beers?per_page=6${searchValue}${searchHighABV}${searchClassicRange}`
+      `https://api.punkapi.com/v2/beers?per_page=80${searchValue}${searchHighABV}${searchClassicRange}`
     );
     let beersData: Beer[] = await data.json();
 
