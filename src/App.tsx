@@ -37,7 +37,8 @@ function App() {
 
   const handleNumOfResultsChange = (event: ChangeEvent<HTMLInputElement>) => {
     const value: string = event.currentTarget.value;
-    if (!value || parseInt(value) < 1 || parseInt(value) > 80) setNumOfResults("80");
+    if (!value || parseInt(value) < 1 || parseInt(value) > 80)
+      setNumOfResults("80");
     else {
       setNumOfResults(value);
     }
@@ -49,20 +50,47 @@ function App() {
     });
   };
 
-  const getBeerData = async () => {
+  const getDefaultBeerData = async () =>{
     const data = await fetch(
-      `https://api.punkapi.com/v2/beers?per_page=${numOfResults}${searchValue}${searchHighABV}${searchClassicRange}`
+      `https://api.punkapi.com/v2/beers?per_page=80`
     );
-    let beersData: Beer[] = await data.json();
+    const beersData: Beer[] = await data.json();
+    sessionStorage.setItem("80", JSON.stringify(beersData));
+  }
 
-    if (searchAdicity) beersData = filterPh(beersData);
+  const getBeerData = async () => {
+    const queryKey = `${numOfResults}${searchValue}${searchHighABV}${searchClassicRange}`;
+    const storedData = sessionStorage.getItem(queryKey);
+    console.log(storedData);
+    console.log(queryKey)
+    
 
-    setBeers(beersData);
+    if (storedData) setBeers(JSON.parse(storedData));
+    else {
+      const data = await fetch(
+        `https://api.punkapi.com/v2/beers?per_page=${numOfResults}${searchValue}${searchHighABV}${searchClassicRange}`
+      );
+      let beersData: Beer[] = await data.json();
+
+      if (searchAdicity) beersData = filterPh(beersData);
+
+      sessionStorage.setItem(queryKey, JSON.stringify(beersData));
+
+      setBeers(beersData);
+    }
   };
 
   useEffect(() => {
     getBeerData();
-  }, [searchValue, searchHighABV, searchClassicRange, searchAdicity, numOfResults]);
+  }, [
+    searchValue,
+    searchHighABV,
+    searchClassicRange,
+    searchAdicity,
+    numOfResults,
+  ]);
+
+  getDefaultBeerData();
 
   return (
     <HashRouter basename="">
@@ -82,10 +110,7 @@ function App() {
             </section>
           }
         />
-        <Route
-          path="/beers/:id"
-          element={<BeerInfo beers={beers} />}
-        />
+        <Route path="/beers/:id" element={<BeerInfo beers={beers} />} />
       </Routes>
     </HashRouter>
   );
