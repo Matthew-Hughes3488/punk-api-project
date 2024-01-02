@@ -1,5 +1,5 @@
 import { Beer } from "../../types/types";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import "./BeerInfo.scss";
 import { BeerInfoCard } from "../BeerInfoCard/BeerInfoCard";
 
