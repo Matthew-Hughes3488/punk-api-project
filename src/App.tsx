@@ -2,7 +2,7 @@ import { useEffect, useState, ChangeEvent } from "react";
 import { Main } from "./components/Main/Main";
 import { Beer } from "./types/types";
 import { NavBar } from "./components/NavBar/NavBar";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import { BeerInfo } from "./container/BeerInfo/BeerInfo";
 import "./App.scss";
 
@@ -65,7 +65,7 @@ function App() {
   }, [searchValue, searchHighABV, searchClassicRange, searchAdicity, numOfResults]);
 
   return (
-    <BrowserRouter>
+    <HashRouter basename="">
       <Routes>
         <Route
           path="/"
@@ -87,7 +87,7 @@ function App() {
           element={<BeerInfo beers={beers} />}
         />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
