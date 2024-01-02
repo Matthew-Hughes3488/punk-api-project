@@ -61,8 +61,6 @@ function App() {
   const getBeerData = async () => {
     const queryKey = `${numOfResults}${searchValue}${searchHighABV}${searchClassicRange}`;
     const storedData = sessionStorage.getItem(queryKey);
-    console.log(storedData);
-    console.log(queryKey)
     
 
     if (storedData) setBeers(JSON.parse(storedData));
@@ -93,7 +91,7 @@ function App() {
   getDefaultBeerData();
 
   return (
-    <HashRouter basename="">
+    <HashRouter basename="/punk-api-project">
       <Routes>
         <Route
           path="/"
