@@ -9,7 +9,7 @@ import "./App.scss";
 function App() {
   const [beers, setBeers] = useState<Beer[]>([]);
   const [searchValue, setSearchValue] = useState<string>("");
-  const [numOfResults, setNumOfResults] = useState<string>("6");
+  const [numOfResults, setNumOfResults] = useState<string>("80");
   const [searchHighABV, setSearchHighABV] = useState<string>("");
   const [searchClassicRange, setSearchClassicRange] = useState<string>("");
   const [searchAdicity, setSearchAcitdity] = useState<boolean>(false);
@@ -37,7 +37,7 @@ function App() {
 
   const handleNumOfResultsChange = (event: ChangeEvent<HTMLInputElement>) => {
     const value: string = event.currentTarget.value;
-    if (!value || parseInt(value) < 1) setNumOfResults("6");
+    if (!value || parseInt(value) < 1 || parseInt(value) > 80) setNumOfResults("80");
     else {
       setNumOfResults(value);
     }
